@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to projects_path, notice: 'Project was succesfully created.'
     else
-      redirect_to projects_path, notice: 'Something is broken.'
+      render :new
     end
   end
 
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
     if @project.update_attributes(project_params)
       redirect_to projects_path, notice: 'Project was succesfully updated.'
     else
-      redirect_to projects_path, notice: 'Something is broken.'
+      render :edit
     end
   end
 
