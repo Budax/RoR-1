@@ -1,8 +1,12 @@
+<p id="notice"><%= notice %></p>
+
 <h1><%= @project.title %></h1>
 <p>
   <strong>Author:</strong> <%= @project.author %><br>
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
+
+<%= render 'comments' %>
 
 <%= link_to "Back", projects_path %>

@@ -1,0 +1,16 @@
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <% if comment.persisted? %>
+    <%= comment.created_at %> <%= comment.content %><br><hr>
+  <% end %>
+<% end %>
+
+<%= form_for [ @project, @new_comment ] do |f| %>
+  <p>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
